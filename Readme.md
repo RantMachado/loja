@@ -1,4 +1,4 @@
-Projeto Loja do seu Emanuel
+Projeto Loja do seu Manoel
 
 Commando para rodar o projeto 
 

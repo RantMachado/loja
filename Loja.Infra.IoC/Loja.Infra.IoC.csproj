@@ -1,5 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\Loja.Domain\Loja.Domain.csproj" />
+    <ProjectReference Include="..\Loja.Application\Loja.Application.csproj" />
+    <ProjectReference Include="..\Loja.Infra.Data\Loja.Infra.Data.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
