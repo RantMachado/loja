@@ -1,0 +1,1 @@
+dotnet run --project Loja.WebApi/Loja.WebApi.csproj
