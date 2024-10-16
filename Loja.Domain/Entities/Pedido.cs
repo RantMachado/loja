@@ -19,6 +19,6 @@ public class Pedido : BaseEntity
   {
     DomainExceptionValidation.When(pedido_id < 0, Resources.InvalidId);
 
-    DomainExceptionValidation.When(produtos.Count < 0, Resources.InvalidList);
+    DomainExceptionValidation.When(produtos.Count < 1, Resources.InvalidList);
   }
 }

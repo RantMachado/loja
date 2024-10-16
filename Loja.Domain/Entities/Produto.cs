@@ -18,15 +18,19 @@ public sealed class Produto : BaseEntity
 
   private static void ValidateDomain(string produto_id, Dimensao dimensoes)
   {
-    DomainExceptionValidation.When(string.IsNullOrEmpty(produto_id), string.Format(Resources.PropertyNullOrEmpty, nameof(Produto_Id)));
+    DomainExceptionValidation
+      .When(string.IsNullOrEmpty(produto_id), Resources.PropertyNullOrEmpty);
 
     DomainExceptionValidation
-      .When(dimensoes.Altura < 0, string.Format(Resources.ValidDimensions, nameof(dimensoes.Altura), dimensoes.Altura));
+      .When(produto_id.Length < 3, Resources.PropertyTooShortValueString);
 
     DomainExceptionValidation
-      .When(dimensoes.Largura < 0, string.Format(Resources.ValidDimensions, nameof(dimensoes.Largura), dimensoes.Largura));
+      .When(dimensoes.Altura < 0, Resources.InvalidDimensions);
 
     DomainExceptionValidation
-      .When(dimensoes.Comprimento < 0, string.Format(Resources.ValidDimensions, nameof(dimensoes.Comprimento), dimensoes.Comprimento));
+      .When(dimensoes.Largura < 0, Resources.InvalidDimensions);
+
+    DomainExceptionValidation
+      .When(dimensoes.Comprimento < 0, Resources.InvalidDimensions);
   }
 }

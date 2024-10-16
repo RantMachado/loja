@@ -2,8 +2,9 @@ namespace Loja.Domain.Common;
 
 public static class Resources
 {
-  public static string InvalidId => "Id com valor inválido.";
-  public static string InvalidList => "A lista de produtos não pode estar vazia.";
-  public static string PropertyNullOrEmpty => $"O campo {0} não pode estar em branco.";
-  public static string ValidDimensions => $"{0} deve possuir valores positivos. O valor informado é {1}.";
+  public static string InvalidId => "Id com valor inválido ou negativo.";
+  public static string InvalidList => "A lista não pode estar vazia.";
+  public static string PropertyNullOrEmpty => "O campo não pode ser nulo.";
+  public static string InvalidDimensions => "As dimensões devem possuir valores positivos.";
+  public static string PropertyTooShortValueString => "Campo inválido, muito curto, mínimo de 3 caracteres.";
 }
