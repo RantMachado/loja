@@ -26,7 +26,7 @@ public class ProcessarPedidoTests : BaseTest
       .Setup(x => x.EmpacotarAsync(It.IsAny<PedidosDto>()))
       .ReturnsAsync(It.IsAny<IEnumerable<PedidoProcessadoDto>>());
 
-    var resultado = await _sut.Processar(It.IsAny<PedidosDto>());
+    var resultado = await _sut.ProcessarAsync(It.IsAny<PedidosDto>());
 
     resultado.Should().BeNull();
   }

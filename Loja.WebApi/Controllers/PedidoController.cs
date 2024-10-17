@@ -17,5 +17,5 @@ public class PedidoController : ControllerBase
   public async Task<IActionResult> ProcessarPedido(
     [FromBody] PedidosDto pedidosDtos,
     [FromServices] IProcessarPedido service) =>
-    Ok(await service.Processar(pedidosDtos));
+    Ok(await service.ProcessarAsync(pedidosDtos));
 }
