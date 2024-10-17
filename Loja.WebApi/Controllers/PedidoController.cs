@@ -1,4 +1,5 @@
 using Loja.Application.DTOs;
+using Loja.Application.Interfaces.UseCases;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Loja.WebApi.Controllers;
@@ -13,7 +14,8 @@ public class PedidoController : ControllerBase
   /// <param name="pedidoDtos">Recebe uma lista de pedidos</param>
   /// <returns>Retorna uma lista de pedidos processados</returns>
   [HttpPost("Processar")]
-  public IActionResult ProcessarPedido(
-    [FromBody] List<PedidoDto> pedidoDtos) =>
-    Ok();
+  public async Task<IActionResult> ProcessarPedido(
+    [FromBody] PedidosDto pedidosDtos,
+    [FromServices] IProcessarPedido service) =>
+    Ok(await service.Processar(pedidosDtos));
 }

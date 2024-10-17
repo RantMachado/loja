@@ -1,12 +1,17 @@
 using Loja.Application.DTOs;
+using Loja.Application.Interfaces.Services;
 using Loja.Application.Interfaces.UseCases;
 
 namespace Loja.Application.UseCases;
 
-public class ProcessarPedido : IProcessarPedido
+public class ProcessarPedido(IEmpacotarService empacotarService) : IProcessarPedido
 {
-  public Task<IEnumerable<PedidoProcessadoDto>> Processar(IEnumerable<PedidoDto> pedidosDto)
+  private readonly IEmpacotarService _empacotarService = empacotarService;
+
+  public async Task<IEnumerable<PedidoProcessadoDto>> Processar(PedidosDto pedidosDto)
   {
-    throw new NotImplementedException();
+    // Implementar validaçoes
+
+    return await _empacotarService.EmpacotarAsync(pedidosDto);
   }
 }
