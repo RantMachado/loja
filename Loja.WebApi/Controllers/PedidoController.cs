@@ -1,5 +1,6 @@
 using Loja.Application.DTOs;
 using Loja.Application.Interfaces.UseCases;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Loja.WebApi.Controllers;
@@ -14,6 +15,7 @@ public class PedidoController : ControllerBase
   /// <param name="pedidoDtos">Recebe uma lista de pedidos</param>
   /// <returns>Retorna uma lista de pedidos processados</returns>
   [HttpPost("Processar")]
+  [Authorize]
   public async Task<IActionResult> ProcessarPedido(
     [FromBody] PedidosDto pedidosDtos,
     [FromServices] IProcessarPedido service) =>

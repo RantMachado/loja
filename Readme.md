@@ -6,7 +6,7 @@ O projeto foi elaborado usando principíos da **Clean Arch** e **DDD** em cima d
 
 A camada de aplicação usa os pacotes **AutoMapper** e **FluentValidation**.
 
-A camada de persistencia eu criei, mas acabei **NÃO** persistindo os dado por conta do tempo.
+A camada de persistencia existe a dependência **EntityFrameworkCore** e no **EntityFrameworkCore.InMemory**
 
 A camada de teste possui os pacotes **Moq**, **Xunit**, **FluentAssertions** e **AutoFixture**.
 
@@ -36,6 +36,22 @@ abrir localhost na rota a seguir
 
 Rota: http://localhost:5122/swagger/index.html
 ```
+### Aplicação rodando
+```
+Após rodar a aplicação é necessário se registrar na rota /Security/register
+
+
+http://localhost:5122/Security/register
+
+Fazer login na rota 
+
+http://localhost:5122/Security/login
+
+Buscar o token e inserir na autenticação do Swagger, após isso a rota de processar 
+pedido ficará disponível para uso.
+
+```
+
 ----
 
 *OBS 1: O arquivo Dockerfile se encontra dentro do projeto de api.*
